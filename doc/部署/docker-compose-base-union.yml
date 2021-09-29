@@ -1,0 +1,43 @@
+version: "3.7"
+networks:
+  tdf-base:
+
+services:
+  tdf-base:
+    image: tdfbase:latest
+    container_name: tdf-base
+    environment:
+      - "server.port=8889"
+      - "spring.profiles.active=test"
+    ports:
+      - "8889:8889"
+    restart: always
+    networks:
+      - tdf-base
+
+  tdf-union:
+    image: tdfunion:latest
+    container_name: tdf-union
+    environment:
+      - "server.port=8899"
+      - "spring.profiles.active=test"
+    ports:
+      - "8899:8899"
+    restart: always
+    networks:
+      - tdf-base
+
+  tdf-ui-sample:
+    image: kitematic/hello-world-nginx
+    container_name: tdf-ui-sample
+    volumes:
+      - /home/ubuntu/iri/tdfbase/tdf-ui-vue/dist:/website_files
+    ports:
+      - "8789:80"
+    restart: always
+    networks:
+      - tdf-base
+
+
+
+

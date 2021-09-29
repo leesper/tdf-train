@@ -1,0 +1,45 @@
+package ${package.ServiceImpl};
+
+import ${package.Entity}.${entity};
+import ${package.Mapper}.${table.mapperName};
+import ${package.Service}.${table.serviceName};
+import ${superServiceImplClassPackage};
+import $!{cfg.DTO}.$!{entity}DTO;
+import org.springframework.stereotype.Service;
+import cn.com.taiji.common.exception.BaseException;
+import cn.com.taiji.common.util.CommonMybatisPageUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import cn.com.taiji.common.dto.PageDTO;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+
+/**
+ * <p>
+ * $!{table.comment} 服务实现类
+ * </p>
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+@Service
+#if(${kotlin})
+open class ${table.serviceImplName} : ${superServiceImplClass}<${table.mapperName}, ${entity}>(), ${table.serviceName} {
+
+}
+#else
+public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.mapperName}, ${entity},${entity}DTO> implements ${table.serviceName}<${entity}> {
+
+    @Autowired
+    private ${entity}Mapper $!{table.entityPath}Mapper;
+
+
+    @Override
+    public PageDTO getPage(PageDTO<${entity}DTO> pageDTO) throws BaseException {
+         Page page = CommonMybatisPageUtil.getInstance().pageDTOtoPage(pageDTO);
+         ${entity} $!{table.entityPath} = getDomainFilterFromPageDTO(pageDTO);
+         IPage<${entity}> $!{table.entityPath}Page = iBaseRepository.selectPage(page, $!{table.entityPath});
+         PageDTO resultPage = CommonMybatisPageUtil.getInstance().iPageToPageDTO($!{table.entityPath}Page, ${entity}DTO.class);
+         return resultPage;
+    }
+}
+#end

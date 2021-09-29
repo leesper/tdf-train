@@ -1,0 +1,51 @@
+<template>
+  <el-form ref="formItem" :model="formItem" :rules="rules" label-width="100px">
+    #foreach($field in ${table.fields})
+    <el-row>
+      <el-col>
+        <el-form-item label="${field.comment}:" prop="${field.propertyName}">
+          <el-input v-model="formItem.${field.propertyName}"   placeholder=" 请输入${field.comment}"/>
+        </el-form-item>
+      </el-col>
+    </el-row>
+    #end
+  </el-form>
+</template>
+
+<script>
+export default {
+    name: 'Add',
+    data(){
+        return {
+              disabled: false,
+              formItem: {
+                  #foreach($field in ${table.fields})
+                  ${field.propertyName}: ''#if($foreach.hasNext),#end
+                  #end
+              },
+              arrayDataStatus: false,
+                // 检测
+              rules: {
+                   #foreach($field in ${table.fields})
+                   ${field.propertyName}: [
+                      {required: true, message: '请输入${field.comment}', trigger: 'blur'}
+                   ]#if($foreach.hasNext),#end
+                    #end
+              }
+        }
+    },
+    methods: {
+        submitForm(){
+            var status = false
+            this.${cfg.REF}['formItem'].validate(valid => {
+               if (valid) {
+                    status = true
+               } else {
+                    status = false
+               }
+            })
+              return status
+        }
+    }
+}
+</script>

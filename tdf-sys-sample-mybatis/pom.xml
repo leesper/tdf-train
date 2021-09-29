@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cn.com.taiji</groupId>
+        <artifactId>tdf-bom</artifactId>
+        <version>2.4.6</version>
+        <relativePath/>
+    </parent>
+    <groupId>com.sample.tdf</groupId>
+    <artifactId>tdf-sys-sample-mybatis</artifactId>
+    <packaging>jar</packaging>
+
+    <properties>
+        <skipTests>true</skipTests>
+    </properties>
+
+    <dependencies>
+
+        <!--        代码生成工具依赖-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>3.4.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity-engine-core</artifactId>
+            <version>2.3</version>
+        </dependency>
+        <!--        代码生成工具依赖-->
+        <dependency>
+            <groupId>cn.com.taiji</groupId>
+            <artifactId>tdf-log-mybatis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.com.taiji</groupId>
+            <artifactId>tdf-security-jwt</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.com.taiji</groupId>
+            <artifactId>tdf-sys-mybatis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.com.taiji</groupId>
+            <artifactId>tdf-sys-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!--mysql-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <!--金仓*****************************************start-->
+<!--        <dependency>-->
+<!--            <groupId>com.kingbase</groupId>-->
+<!--            <artifactId>kingbase8</artifactId>-->
+<!--            <version>8.2.0</version>-->
+<!--            <scope>system</scope>-->
+<!--            <systemPath>${basedir}/../lib/kingbase8-8.2.0.jar</systemPath>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.hibernate.kingbase</groupId>-->
+<!--            <artifactId>hibernate-dialect-kingbase</artifactId>-->
+<!--            <version>5.2.17</version>-->
+<!--            <scope>system</scope>-->
+<!--            <systemPath>${basedir}/../lib/hibernate-5.2.17.Finaldialect.jar</systemPath>-->
+<!--        </dependency>-->
+        <!--金仓*****************************************end-->
+        <!-- orcal连接-->
+        <dependency>
+            <groupId>com.oracle.database.jdbc</groupId>
+            <artifactId>ojdbc8</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.oracle.database.nls</groupId>
+            <artifactId>orai18n</artifactId>
+        </dependency>
+        <!-- GraphQL -->
+        <dependency>
+            <groupId>com.graphql-java-kickstart</groupId>
+            <artifactId>graphql-spring-boot-starter</artifactId>
+            <version>7.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.graphql-java-kickstart</groupId>
+            <artifactId>graphql-java-tools</artifactId>
+            <version>6.0.2</version>
+        </dependency>
+        <!-- GraphiQL tool -->
+        <dependency>
+            <groupId>com.graphql-java-kickstart</groupId>
+            <artifactId>graphiql-spring-boot-starter</artifactId>
+            <version>7.0.1</version>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <!--mvn deploy忽略此model，这是可运行jar包，不应该上传到中央仓库-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <repositories>
+        <repository>
+            <id>maven-nexus-iri</id>
+            <name>TDF的RELEASE版本库</name>
+            <url>http://172.10.10.20:8081/repository/taiji/</url>
+        </repository>
+    </repositories>
+</project>
+

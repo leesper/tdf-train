@@ -1,0 +1,23 @@
+package ${package.Service};
+import cn.com.taiji.common.dto.PageDTO;
+import ${package.Entity}.${entity};
+import ${superServiceClassPackage};
+import $!{cfg.DTO}.$!{entity}DTO;
+import cn.com.taiji.common.domain.CommonDomain;
+/**
+ * <p>
+ * $!{table.comment} 服务类
+ * </p>
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+#if(${kotlin})
+interface ${table.serviceName} : ${superServiceClass}<${entity}>
+#else
+public interface ${table.serviceName}<D extends CommonDomain>  extends ${superServiceClass}<${entity}DTO,D> {
+
+
+
+}
+#end

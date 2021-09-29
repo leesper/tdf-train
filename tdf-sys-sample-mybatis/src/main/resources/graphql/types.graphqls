@@ -1,0 +1,24 @@
+type Query {
+    # 根据昵称获取用户
+    studentDTO(id: String!): StudentDTO
+    # 获取用户列表
+    studentDTOs: [StudentDTO]
+}
+type StudentDTO {
+    studentName: String!
+    studentClass: String!
+    studentSex: String!
+    token: String!
+    createdBy: String!
+    modifiedBy: String!
+    modifiedDate: String
+    createdDate: String
+    flag: String
+    remark: String
+    id: String!
+}
+
+type Result {
+    code: Int!
+    message: String
+}

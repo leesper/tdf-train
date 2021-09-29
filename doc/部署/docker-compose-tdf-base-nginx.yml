@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  nginx-tdf-base:
+    restart: always
+    container_name: nginx-tdf-base
+    image: lib.taiji.com.cn:8082/nginix:1.19
+    ports:
+      - 8789:8789
+    volumes:
+      - /home/ubuntu/iri/tdf-base/nginx/conf.d/nginx.conf:/etc/nginx/nginx.conf
+      - /home/ubuntu/iri/tdf-base/nginx/log:/var/log/nginx
+      - /home/ubuntu/iri/tdf-base/nginx/www/dist:/var/www/dist
+
+
