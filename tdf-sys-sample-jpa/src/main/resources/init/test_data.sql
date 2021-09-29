@@ -190,10 +190,10 @@ CREATE TABLE `employee`  (
 -- ----------------------------
 -- Records of employee
 -- ----------------------------
-INSERT INTO `employee` VALUES ('9db6a6b405cf45548e263a321294322', 'admin', '2021-09-24 09:44:34.668961', 1, NULL, NULL, NULL, 'b1', 1, '北京市', 29);
-INSERT INTO `employee` VALUES ('9db6a6b405cf45548e263a35129132423', 'admin', '2021-09-24 09:44:34.668961', 1, NULL, NULL, NULL, 'a1', 1, '中国贵州省贵阳市', 21);
+INSERT INTO `employee` VALUES ('9db6a6b405cf45548e263a321294322', 'admin', '2021-09-24 09:44:34.668961', 1, NULL, NULL, NULL, 'b1', 1, '广州市', 29);
+INSERT INTO `employee` VALUES ('9db6a6b405cf45548e263a35129132423', 'admin', '2021-09-24 09:44:34.668961', 1, NULL, NULL, NULL, 'a1', 1, '浙江省省杭州市', 21);
 INSERT INTO `employee` VALUES ('9db6a6b405cf45548e263a35129158a5', 'admin', '2021-09-24 09:44:34.668961', 1, NULL, NULL, '', '234234234', 0, NULL, NULL);
-INSERT INTO `employee` VALUES ('9db6a6b405cf45548sad3a32129132423', 'admin', '2021-09-24 09:44:34.668961', 1, NULL, NULL, NULL, 'c1', 0, '江苏省南京市', 25);
+INSERT INTO `employee` VALUES ('9db6a6b405cf45548sad3a32129132423', 'admin', '2021-09-24 09:44:34.668961', 1, NULL, NULL, NULL, 'c1', 0, '江苏省苏州市', 25);
 
 -- ----------------------------
 -- Table structure for employee_organization

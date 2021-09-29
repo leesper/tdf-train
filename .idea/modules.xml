@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/tdf-sample.iml" filepath="$PROJECT_DIR$/tdf-sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tdf-sys-sample-jpa/tdf-sys-sample-jpa.iml" filepath="$PROJECT_DIR$/tdf-sys-sample-jpa/tdf-sys-sample-jpa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tdf-sys-sample-mybatis/tdf-sys-sample-mybatis.iml" filepath="$PROJECT_DIR$/tdf-sys-sample-mybatis/tdf-sys-sample-mybatis.iml" />
+    </modules>
+  </component>
+</project>

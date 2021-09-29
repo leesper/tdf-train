@@ -14,12 +14,9 @@ spring:
 spring:
   datasource:
     driver-class-name: "com.mysql.cj.jdbc.Driver"     # mysql 8时候配置
-    url: "jdbc:mysql://localhost:3306/taiji?serverTimezone=GMT%2B8&amp&characterEncoding=utf-8&useSSL=false"  #  mysql8时候配置
-    # url=jdbc:mysql://127.0.0.1:3306/tdfsample?useUnicode=true&characterEncoding=utf-8     # mysql 8以下配置
-    # type=com.zaxxer.hikari.HikariDataSource    # mysql 8以下配置
-    #data: "classpath:/init/mysqldata.sql"      #初始化sql配置
+    url: "jdbc:mysql://localhost:3306/taiji?serverTimezone=GMT%2B8&amp&characterEncoding=utf-8&useSSL=false"  #  mysql8
     username: root
-    password: 123456
+    password: root
     #data-username: root
     #data-password: root
   jpa:
